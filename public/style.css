@@ -535,3 +535,40 @@ button {
     font-size: 15px;
     font-weight: 700;
 }
+
+/*Media*/
+@media (max-width:1500px) {
+    .main__content-item:nth-child(n+5) {
+        display: none;
+    }
+
+    .main__content-list {
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+    .button-creatPlay, .button-likePlay,.header__link {
+        font-size: 12px;
+    }
+}
+
+@media (max-width:1200px) {
+    .main__content-item:nth-child(n+4) {
+        display: none;
+    }
+
+    .main__content-list {
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .button-creatPlay, .button-likePlay,.header__link {
+        font-size: 11px;
+    }
+
+    .plus, .heart ,.header__link svg {
+        margin-right: 10px;
+    }
+
+    .search {
+        width: 180px;
+    }
+}
