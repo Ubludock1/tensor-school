@@ -1,0 +1,23 @@
+/*Search*/
+.search {
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    width: 300px;
+    padding-left: 50px;
+    align-self: stretch;
+    font-weight: 500;
+    background-image: url("img/loopa.png");
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    background-position: 5px center;
+    height: 100%;
+}
+
+.main__content-item-more {
+    display: flex;
+    height: 200px;
+    border-radius: 6px;
+    background-color:blueviolet;
+}
