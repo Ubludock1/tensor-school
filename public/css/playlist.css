@@ -4,8 +4,7 @@
     align-items: flex-end;
     color: white;
     background: linear-gradient(transparent 0,rgba(0,0,0,.5) 100%);
-    margin-top: -63px;
-    padding-top: 83px;
+    padding-top: 37px;
 }
 
 .palylist-name {
@@ -17,7 +16,6 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 96px;
-    line-height: 96px;
     font-weight: 900;
 }
 
@@ -43,10 +41,6 @@
     color: rgba(255,255,255,.7)
 }
 
-.playlist-footer *:not(:last-child) {
-    margin-right: 8px;
-}
-
 .playlist-spotify {
     color: rgba(255,255,255,.7);
     text-decoration: none;
@@ -59,16 +53,7 @@
 .main__button-container {
     display: flex;
     align-items: center;
-}
-
-.main__button-container button:not(:last-child) {
-    margin-right: 32px;
-}
-
-.main__button-container button {
-    border: none;
-    outline: none;
-    cursor: pointer;
+    gap:32px;
 }
 
 .play {
@@ -120,11 +105,11 @@
     transition-timing-function: ease-in;
 }
 
-.table-row:not(:first-child):hover {
+.table-row-item:hover {
     background-color:rgba(255,255,255,.3);
 }
 
-.table-row:not(:first-child):hover .table-author,.table-row:not(:first-child):hover .table-albom {
+.table-row-item:hover .table-author,.table-row-item:hover .table-albom {
     color: white;
 }
 
