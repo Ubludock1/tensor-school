@@ -81,7 +81,7 @@ body {
 }
 
 
-.header__link .header__svg,.header__link-current .header__img {
+.header__svg,.header__img {
     width: 24px;
     height: 24px;
     margin-right: 15px;
@@ -359,7 +359,7 @@ body {
         font-size: 11px;
     }
 
-    .creat-icon ,.header__link .header__svg,.header__link-current .header__img {
+    .creat-icon ,.header__svg,.header__img {
         margin-right: 10px;
     }
 
