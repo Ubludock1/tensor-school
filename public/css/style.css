@@ -259,7 +259,7 @@ body {
     display: grid;
     gap: 20px;
     align-self: stretch;
-    grid-template-columns: repeat(6,1fr);
+    grid-template-columns: repeat(auto-fill,200px);
 }
 
 .main__content-item {
@@ -337,12 +337,9 @@ body {
         display: none;
     }
 
-    .main__content-list {
-        grid-template-columns: repeat(4,1fr);
-    }
     
     .button-play,.header__link,.header__link-current {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
@@ -351,13 +348,6 @@ body {
         display: none;
     }
 
-    .main__content-list {
-        grid-template-columns: repeat(3,1fr);
-    }
-
-    .button-play,.header__link {
-        font-size: 11px;
-    }
 
     .creat-icon ,.header__svg,.header__img {
         margin-right: 10px;
