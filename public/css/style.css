@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: "Montserrat",sans-serif;;
+    font-family: "Montserrat",sans-serif;
     display: flex;
     background-color: black;
 }
@@ -12,6 +12,10 @@ body {
     outline: none;
     cursor: pointer;
     background: none;
+}
+
+.hidden {
+    display: none;
 }
 
 /*Header*/
@@ -195,6 +199,7 @@ body {
 
 
 .main__pag-search {
+    position: relative;
     align-self: stretch;
 }
 
@@ -330,14 +335,127 @@ body {
     font-weight: 600;
 }
 
+/*User*/
+.user__name {
+    margin: 0;
+    color: white;
+}
+
+.button__exit {
+    color:white;
+    padding:10px;
+    border-radius:10px;
+}
+
+/*Audio*/
+.audio__visible {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgba(16, 16, 16,0.8);
+}
+
+.play-time {
+    color: white;
+}
+
+.play-name {
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.cur-time{
+    -webkit-appearance: none;
+    height: 7px;
+    border-radius: 0px;
+    background: white;
+    outline: none;
+    opacity: 0.7;
+}
+
+
+.cur-time::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 7px;
+    height: 7px;
+    background: gray;
+    cursor: pointer;
+}
+
+.cur-time::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.vol-button {
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/*Error*/
+.error__container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    min-height: 150px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(16, 16, 16,0.9);
+}
+
+.error__message {
+    color: white;
+}
+
+.error__head {
+    color: white;
+}
+
+
+.error__button {
+    font-family: "Montserrat",sans-serif;
+    border: 2px solid gray;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+}
+
 
 /*Media*/
 @media (max-width:1500px) {
-    .main__content-item:nth-child(n+5) {
-        display: none;
-    }
-
-    
     .button-play,.header__link,.header__link-current {
         font-size: 10px;
     }

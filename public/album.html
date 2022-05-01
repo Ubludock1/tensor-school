@@ -7,13 +7,21 @@
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Spotify copy"/>
     <title>Spotify</title>
+    <link rel="stylesheet" href="css/playlist.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="js/load.js"></script>
+    <script type="module" src="js/album.js"></script>
+    <script src="js/audio.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="error__container">
+      <h3 class="error__head">Ошибка!</h3>
+      <p class="error__message">Тут написана какая-то ошибка</p>
+      <button class="error__button buttonClear">OK</button>
+    </div>
     <header class="header">
       <nav class="header__nav">
         <a href="#"><img src="img/Spotifi.svg" class="logo" alt="logo"></a>
@@ -51,77 +59,54 @@
     <main class="main">
       <nav class="main__nav">
         <ul class="main__pag-list">
-          <li class="main__pag-item-container"><button  class="main__pag-item left buttonClear"><svg  id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="128px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="17" y2="64"/><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="64" y2="111"/></g></svg></button></li>
-          <li class="main__pag-item-container"><button  class="main__pag-item right buttonClear"><svg  id="Layer_2" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="128px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="17" y2="64"/><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="64" y2="111"/></g></svg></button></li>
+          <li class="main__pag-item-container"><button  class="main__pag-item left buttonClear"><svg id="Layer_1" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="128px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="17" y2="64"/><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="64" y2="111"/></g></svg></button></li>
+          <li class="main__pag-item-container"><button  class="main__pag-item right buttonClear"><svg id="Layer_2" style="enable-background:new 0 0 128 128;" version="1.1" viewBox="0 0 128 128" width="128px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="40.5" x2="87.5" y1="17" y2="64"/><line style="fill:none;stroke:lightgray;stroke-width:12;stroke-linecap:square;stroke-miterlimit:10;" x1="87.5" x2="40.5" y1="64" y2="111"/></g></svg></button></li>
         </ul>
         <div class="main_autho">
-          <button class="main__button autho buttonClear">ЗАРЕГИСТРИРОВАТЬСЯ</button>
           <button class="main__button login buttonClear">ВОЙТИ</button>
         </div>
       </nav>
-      <div class="main__content">
-        <div class="main__playlist">
-          <h2 class="main__head">Музыка для заботы о себе</h2>
-          <ul class="main__content-list">
-            <li class="main__content-item">
-              <a href="playlist.html">
-                <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                <h3 class="main__content-head">Peace</h3>
-                <p class="main__content-desc">Тут что-то написано</p>
-              </a>
-            </li>
-            <li class="main__content-item">
-              <a href="playlist.html">
-                <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                <h3 class="main__content-head">Peace</h3>
-                <p class="main__content-desc">Тут что-то написано</p>
-              </a>
-            </li>
-            <li class="main__content-item">
-                <a href="playlist.html">
-                  <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                  <h3 class="main__content-head">Peace</h3>
-                  <p class="main__content-desc">Тут что-то написано</p>
-                </a>
-              </li>
-              <li class="main__content-item">
-                <a href="playlist.html">
-                  <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                  <h3 class="main__content-head">Peace</h3>
-                  <p class="main__content-desc">Тут что-то написано</p>
-                </a>
-              </li>
-            <li class="main__content-item">
-              <a href="playlist.html">
-                <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                <h3 class="main__content-head">Peace</h3>
-                <p class="main__content-desc">Тут что-то написано</p>
-              </a>
-            </li>
-            <li class="main__content-item">
-              <a href="playlist.html">
-                <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                <h3 class="main__content-head">Peace</h3>
-                <p class="main__content-desc">Тут что-то написано</p>
-              </a>
-            </li>
-            <li class="main__content-item">
-              <a href="playlist.html">
-                <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                <h3 class="main__content-head">Peace</h3>
-                <p class="main__content-desc">Тут что-то написано</p>
-              </a>
-            </li>
-            <li class="main__content-item">
-              <a href="playlist.html">
-                <img class="main__content-img" src="img/cat.jpg" alt="cat"> 
-                <h3 class="main__content-head">Peace</h3>
-                <p class="main__content-desc">Тут что-то написано</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+          <div class="main__content main__playlist-descr">
+            <img class="playlist-img" src="img/cat.jpg" alt="cat">
+            <div class="playlist-content">
+                <span class="palylist-name">ПЛЕЙЛИСТ</span>
+                <h2 class="playlist-head">Peace</h2>
+                <p class="playlist-opis">Peaceful instrumentals to help you keep calm.</p>
+                <div class="playlist-footer">
+                    <a class="playlist-spotify" href="#">Spotify</a>
+                    &nbsp;
+                    <span class="playlist-like">792 222 лайка</span>
+                    &nbsp;
+                    <span class="playlist-trek">270 треков,</span>
+                    &nbsp;
+                    <span class="playlist-hours">примерно 13 ч.</span>
+                </div>
+            </div>
+          </div>
+          <div class="main__content main__trek">
+            <div class="main__button-container">
+                <button class="play"><svg height="28" role="img" width="28" viewBox="0 0 24 24" aria-hidden="true"><polygon points="21.57 12 5.98 3 5.98 21 21.57 12" fill="currentColor"></polygon></svg></button>
+                <button class="like buttonClear"><svg role="img" height="32" width="32" viewBox="0 0 32 32" class="Svg-sc-1bi12j5-0 hDgDGI"><path fill="currentColor" d="M27.672 5.573a7.904 7.904 0 00-10.697-.489c-.004.003-.425.35-.975.35-.564 0-.965-.341-.979-.354a7.904 7.904 0 00-10.693.493A7.896 7.896 0 002 11.192c0 2.123.827 4.118 2.301 5.59l9.266 10.848a3.196 3.196 0 004.866 0l9.239-10.819A7.892 7.892 0 0030 11.192a7.896 7.896 0 00-2.328-5.619zm-.734 10.56l-9.266 10.848c-.837.979-2.508.979-3.346 0L5.035 16.104A6.9 6.9 0 013 11.192 6.9 6.9 0 015.035 6.28a6.935 6.935 0 014.913-2.048 6.89 6.89 0 014.419 1.605A2.58 2.58 0 0016 6.434c.914 0 1.555-.53 1.619-.585a6.908 6.908 0 019.346.431C28.277 7.593 29 9.337 29 11.192s-.723 3.6-2.062 4.941z"></path></svg></button>
+                <button class="more buttonClear"><svg role="img" height="32" width="32" viewBox="0 0 24 24" class="Svg-sc-1bi12j5-0 hDgDGI"><path fill="currentColor" d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm15 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg></button>
+            </div>
+            <table class="main__table">
+              <tr class="table-row">
+                <th class="table-head">#</th>
+                <th class="table-head">НАЗВАНИЕ</th>
+                <th class="table-head">АЛЬБОМ</th>
+                <th class="table-head"><svg role="img" height="16" width="16" viewBox="0 0 16 16" class="Svg-sc-1bi12j5-0 hDgDGI"><path fill="currentColor" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8z"></path><path fill="currentColor" d="M8 3.25a.75.75 0 01.75.75v3.25H11a.75.75 0 010 1.5H7.25V4A.75.75 0 018 3.25z"></path></svg></th>
+              </tr>
+            </table>
+          </div>
     </main>
+    <audio  class="audio hidden" controls></audio>
+    <div playing="false"  class="audio__visible hidden"> 
+      <button class="buttonClear play-btn">►</button>
+      <div class="play-name"></div>
+      <input class="cur-time" type="range" min="0" max="10" value="0" step="0">
+      <div class="play-time">00:00</div>
+      <button class="buttonClear vol-button vol-plus">+</button>
+      <button class="buttonClear vol-button vol-minus">-</button>
+    </div>
   </body>
 </html>

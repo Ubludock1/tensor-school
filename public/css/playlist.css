@@ -1,7 +1,7 @@
 /*Playlist*/
 .main__playlist-descr {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     color: white;
     background: linear-gradient(transparent 0,rgba(0,0,0,.5) 100%);
     padding-top: 37px;
