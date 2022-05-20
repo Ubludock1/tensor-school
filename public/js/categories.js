@@ -1,4 +1,6 @@
 import {getToken} from "./getToken.js";
+import{Error} from "./Erorr.js"
+
 fetch('https://api.spotify.com/v1/browse/categories',{
     headers:{
         'Content-Type': 'application/json',
@@ -28,13 +30,5 @@ fetch('https://api.spotify.com/v1/browse/categories',{
         main_content_list.appendChild(new_li);
     });
 }).catch(function(error){
-    switch(error){
-        case 403:
-            document.querySelector(".error__message").textContent = "Недоступен в этой стране";
-            break;
-        case 401:
-            document.querySelector(".error__message").textContent = "Ошибка сервера";
-            break;
-    }
-    document.querySelector(".error__container").style.display="flex";
+    Error(error);
 })

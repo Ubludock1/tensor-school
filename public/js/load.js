@@ -19,7 +19,7 @@ document.querySelector(".main__pag-item.right").addEventListener("click",functio
 })
 
 document.querySelector(".error__button").addEventListener("click",function(){
-    document.querySelector(".error__container").style.display="none";
+    document.querySelector(".error__container").classList.toggle("display__flex");
 })
 
 window.onload = function () {
@@ -33,7 +33,7 @@ window.onload = function () {
     }
 
     if(window.localStorage.getItem("autho")){
-        document.querySelector(".login").style.display="none";
+        document.querySelector(".login").classList.toggle("display__none");
         fetch('https://api.spotify.com/v1/me',{
             headers:{
                 'Content-Type': 'application/json',

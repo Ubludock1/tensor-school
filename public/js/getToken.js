@@ -17,7 +17,6 @@ const getToken = async () => {
         });
 
         const data = await result.json();
-            window.localStorage.setItem("token",data.access_token);
             return data.access_token;
         }
 };

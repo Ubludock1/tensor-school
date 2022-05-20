@@ -18,6 +18,7 @@ body {
     display: none;
 }
 
+
 /*Header*/
 .header {
     width: 18%;
@@ -474,4 +475,12 @@ body {
     .search {
         width: 180px;
     }
+}
+
+.display__flex {
+    display: flex;
+}
+
+.display__none {
+    display: none;
 }

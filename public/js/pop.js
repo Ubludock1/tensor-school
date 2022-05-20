@@ -1,4 +1,7 @@
 import {getToken} from "./getToken.js";
+import{Error} from "./Erorr.js";
+import { Head } from "./Head.js";
+
 if(window.location.hash){
     fetch(window.location.hash.slice(1),{
         headers:{
@@ -13,18 +16,9 @@ if(window.location.hash){
             return res.json()
         }
     }).then((data) => {
-        const head = document.querySelector(".playlist-head");
-        head.textContent = data.name;
+        Head(data,false);
     }).catch(function(error){
-        switch(error){
-            case 403:
-                document.querySelector(".error__message").textContent = "Недоступен в этой стране";
-                break;
-            case 401:
-                document.querySelector(".error__message").textContent = "Ошибка сервера";
-                break;
-        }
-        document.querySelector(".error__container").style.display="flex";
+        Error(error);
     })
     
     fetch(window.location.hash.slice(1)+"/playlists",{
@@ -59,14 +53,6 @@ if(window.location.hash){
             main_content.appendChild(new_li);
         });
     }).catch(function(error){
-        switch(error){
-            case 403:
-                document.querySelector(".error__message").textContent = "Недоступен в этой стране";
-                break;
-            case 401:
-                document.querySelector(".error__message").textContent = "Ошибка сервера";
-                break;
-        }
-        document.querySelector(".error__container").style.display="flex";
+        Error(error);
     })
 }

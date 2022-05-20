@@ -1,4 +1,5 @@
 import {getToken} from "./getToken.js";
+import{Error} from "./Erorr.js"
 
 const debounce = (fn,ms) => {
     let timeout;
@@ -44,15 +45,7 @@ async function search () {
                 container.appendChild(div);
             });
         }).catch(function(error){
-            switch(error){
-                case 403:
-                    document.querySelector(".error__message").textContent = "Недоступен в этой стране";
-                    break;
-                case 401:
-                    document.querySelector(".error__message").textContent = "Ошибка сервера";
-                    break;
-            }
-            document.querySelector(".error__container").style.display="flex";
+            Error(error);
         });
     }
     else {

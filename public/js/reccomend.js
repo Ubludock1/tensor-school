@@ -1,4 +1,5 @@
 import {getToken} from "./getToken.js";
+import{Error} from "./Erorr.js"
 fetch('https://api.spotify.com/v1/albums?ids=6aSk2vxoY3xtz7cXKuY9EL,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc',{
         headers:{
             'Content-Type': 'application/json',
@@ -60,13 +61,13 @@ fetch('https://api.spotify.com/v1/albums?ids=6aSk2vxoY3xtz7cXKuY9EL,1A2GTWGtFfWp
                 new_item.setAttribute("track",element.preview_url);
                 new_item.addEventListener("click",function(){
                     if(element.preview_url==null){
-                        document.querySelector(".error__container").style.display="flex";   
+                        document.querySelector(".error__container").classList.add("display__flex"); 
                         document.querySelector(".error__message").textContent = "Этот трек нельзя прослушать";            
                     }
                     else{
                         if(this.getAttribute("track")!=null){
                             document.querySelector(".audio").setAttribute("src",this.getAttribute("track"));
-                            document.querySelector(".audio__visible").style.display="flex";
+                            document.querySelector(".audio__visible").classList.add("display__flex");
                             document.querySelector(".play-name").textContent = element.name;
                             document.querySelector(".audio__visible").setAttribute("playing","false");
                             document.querySelector(".play-btn").innerHTML="►";
@@ -81,13 +82,5 @@ fetch('https://api.spotify.com/v1/albums?ids=6aSk2vxoY3xtz7cXKuY9EL,1A2GTWGtFfWp
             container.appendChild(new_content);
         })
     }).catch(function(error){
-        switch(error){
-            case 403:
-                document.querySelector(".error__message").textContent = "Недоступен в этой стране";
-                break;
-            case 401:
-                document.querySelector(".error__message").textContent = "Ошибка сервера";
-                break;
-        }
-        document.querySelector(".error__container").style.display="flex";
+        Error(error);
     })

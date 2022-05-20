@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", (e)=> {
+
    const av = document.querySelector(".audio");
    const playBtn=document.querySelector(".play-btn");
    const playTime = document.querySelector(".play-time");
@@ -7,11 +7,12 @@ document.addEventListener("DOMContentLoaded", (e)=> {
    const volMinus = document.querySelector(".vol-minus");
    const speaker=document.querySelector(".speaker");
       
-   av.onloadedmetadata = function() {
-      curTime.max=av.duration;
-   };
    
-   av.ontimeupdate=function() {
+   av.addEventListener("loadedmetadata",function(){
+      curTime.max=av.duration;
+   })
+
+   av.addEventListener("timeupdate",function(){
       var sec_num = av.currentTime;
       var hours = Math.floor(sec_num / 3600);
       var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
@@ -29,8 +30,8 @@ document.addEventListener("DOMContentLoaded", (e)=> {
       }; 
       if(document.querySelector(".audio__visible").getAttribute("playing") == "true"){
          curTime.value=av.currentTime
-      }; 
-   }; 
+      };
+   })
    
    volPlus.addEventListener("click",function(){
       if(av.volume<1){
@@ -44,12 +45,12 @@ document.addEventListener("DOMContentLoaded", (e)=> {
       }
    });
    
-   curTime.onchange=function() { 
+   curTime.addEventListener("change",function(){
       av.play();
       document.querySelector(".audio__visible").setAttribute("playing","true");
       playBtn.innerHTML="❚❚";
       av.currentTime=curTime.value;
-   }; 
+   })
    
    playBtn.addEventListener("click", (a)=> {
       if(document.querySelector(".audio__visible").getAttribute("playing") == "true")
@@ -65,4 +66,3 @@ document.addEventListener("DOMContentLoaded", (e)=> {
          playBtn.innerHTML="❚❚";
       }
    });    
-});
