@@ -32,6 +32,8 @@ window.onload = function () {
         window.history.pushState("", "", redirect_uri);
     }
 
+
+
     if(window.sessionStorage.getItem("autho")){
         document.querySelector(".login").classList.toggle("display__none");
         fetch('https://api.spotify.com/v1/me',{
