@@ -3,8 +3,8 @@ var client_secret = '3400d157503c41b0a67fa2e04ef5bbfd'; // Your secret
 var redirect_uri = 'http://localhost:3000/callback'; // Your redirect uri
 
 const getToken = async () => {
-    if(window.localStorage.getItem("token")!=null){
-        return window.localStorage.token;
+    if(window.sessionStorage.getItem("token")!=null){
+        return window.sessionStorage.token;
     }
     else{
         const result = await fetch('https://accounts.spotify.com/api/token', {
@@ -17,6 +17,7 @@ const getToken = async () => {
         });
 
         const data = await result.json();
+            window.sessionStorage.setItem("token",data.access_token);
             return data.access_token;
         }
 };

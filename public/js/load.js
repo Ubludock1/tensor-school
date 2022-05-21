@@ -27,17 +27,17 @@ window.onload = function () {
     const queryString = window.location.hash;
     if ( queryString && window.location.href.includes("callback") ){
         code = queryString.substring(1).split("&").find(elem => elem.startsWith("access_token")).split("=")[1];
-        window.localStorage.setItem("token",code);
-        window.localStorage.setItem("autho",true);
+        window.sessionStorage.setItem("token",code);
+        window.sessionStorage.setItem("autho",true);
         window.history.pushState("", "", redirect_uri);
     }
 
-    if(window.localStorage.getItem("autho")){
+    if(window.sessionStorage.getItem("autho")){
         document.querySelector(".login").classList.toggle("display__none");
         fetch('https://api.spotify.com/v1/me',{
             headers:{
                 'Content-Type': 'application/json',
-                'Authorization' : 'Bearer '+ window.localStorage.getItem("token")
+                'Authorization' : 'Bearer '+ window.sessionStorage.getItem("token")
             }
         }).then((res) =>res.json()).then((data)=>{
             const main = document.querySelector(".main_autho");
