@@ -10,4 +10,4 @@ function Error (error){
     document.querySelector(".error__container").classList.add("display__flex");
 }
 
-export {Error};
+export default Error;
