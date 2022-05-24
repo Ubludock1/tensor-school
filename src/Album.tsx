@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Error from './Erorr';
 import { TheContext, ErrorContext, Audio } from './App';
-import Fetch from './Fetch';
 import Head from './Head';
 import MainTrack from './MainTrack';
 
