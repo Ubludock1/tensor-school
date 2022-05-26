@@ -30,15 +30,15 @@ const MainTrack = (props:{play:MyType[],img:string,name:string,data:string}) =>{
                         </tr>
                         {props.play.map((item, index) =>
                             <tr key={index} className='table-row-item' onClick={() => {
-                                if(item.track===null){
+                                if(item.track===undefined){
                                     if(item.preview_url!==null)
                                     {setSrc(item)}
-                                    else{navigate("/eroor:"+"track")}
+                                    else{console.log(1);navigate("/eroor:"+"track")}
                                 }
                                 else{
                                     if(item.track.preview_url!==null)
                                     {setSrc(item.track)}
-                                    else{navigate("/eroor:"+"track")}
+                                    else{console.log(1);navigate("/eroor:"+"track")}
                                 }
                             }}>
                                 <td className='table-item table-number'>
