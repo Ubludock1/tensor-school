@@ -1,17 +1,16 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import Error from './Erorr';
-import { TheContext, ErrorContext } from './App';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { TheContext} from './App';
 
 const Play = () => {
+    const navigate = useNavigate();
     const token = useContext(TheContext);
-    const er = useContext(ErrorContext);
     const [play, setPlay] = useState([{ images: [{ url: String }], name: String, id: Number }]);
     const [name, setName] = useState('');
 
     let { item } = useParams<{ item: string }>();
     useEffect(() => {
-        if (token != '' && item != null) {
+        if (token !== '' && item !== undefined) {
             const first = fetch("https://api.spotify.com/v1/browse/categories/" + item.slice(1), {
                 headers: {
                     'Content-Type': 'application/json',
@@ -27,7 +26,7 @@ const Play = () => {
             }).then((data) => {
                 setName(data.name);
             }).catch(function (error) {
-                Error(error, er);
+                navigate("/eroor:"+error);
             });
             const second = fetch("https://api.spotify.com/v1/browse/categories/" + item.slice(1) + "/playlists", {
                 headers: {
@@ -45,11 +44,13 @@ const Play = () => {
                 setPlay(data.playlists.items);
 
             }).catch(function (error) {
-                Error(error, er);
+                navigate("/eroor:"+error);
             });
             Promise.all([first, second]);
         }
     }, [token, item])
+
+
     return (
         <div>
             <div className="main__content main__playlist-descr">

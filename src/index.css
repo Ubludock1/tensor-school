@@ -437,7 +437,6 @@ body {
 
 /*Error*/
 .error__container {
-    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
