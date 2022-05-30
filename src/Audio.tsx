@@ -7,21 +7,7 @@ const MyAudio = () => {
     const [playing,setPlaying] = useState(false);
 
     useEffect(()=>{
-        if(src!==null){
-            if(playing){
-                audio.addEventListener('loadeddata',()=>{
-                    audio.play();
-                })
-            }
-            else{
-                audio.addEventListener('loadeddata',()=>{
-                    audio.pause();
-                })
-            }
-        }
-        return(audio.removeEventListener('loadeddata',()=>{
-            audio.play();
-        }))
+        
     },[playing])
     
     if(src===null){

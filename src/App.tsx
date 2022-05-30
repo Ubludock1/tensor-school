@@ -16,8 +16,7 @@ import Audioa from './Audio';
 import MyType from './Type';
 import AudioType from './AudioType';
 
-
-export const TheContext = React.createContext<string>(null as unknown as string);
+export const TheContext = React.createContext<string>("");
 export const CurrentTrack = React.createContext<AudioType>(null as unknown as AudioType);
 
 function App() {

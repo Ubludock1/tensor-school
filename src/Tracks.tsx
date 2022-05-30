@@ -12,7 +12,7 @@ const Track = () => {
 
     let data = useFetch("https://api.spotify.com/v1/playlists/" + tracks?.slice(1),token);
 
-    if(data===null){
+    if(data===null ){
         return(<div></div>)
     }
     else{

@@ -13,7 +13,7 @@ const Main = () => {
 
   let data = useFetch('https://api.spotify.com/v1/albums?ids=6aSk2vxoY3xtz7cXKuY9EL,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc',token)
   
-  if(data===null){
+  if(data===null ){
     return(<div></div>)
   }
   else{
