@@ -5,7 +5,7 @@ import { TheContext} from './App';
 const Play = () => {
     const navigate = useNavigate();
     const token = useContext(TheContext);
-    const [play, setPlay] = useState([{ images: [{ url: String }], name: String, id: Number }]);
+    const [play, setPlay] = useState<{ images: [{ url: String }], name: String, id: Number }[]>(null as unknown as { images: [{ url: String }], name: String, id: Number }[]);
     const [name, setName] = useState('');
 
     let { item } = useParams<{ item: string }>();

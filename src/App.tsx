@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
 import Main from './Main';
 import Categories from './Categories';
 import Play from './Play';
@@ -17,7 +17,7 @@ import MyType from './Type';
 import AudioType from './AudioType';
 
 
-export const TheContext = React.createContext<string>(null as unknown as '');
+export const TheContext = React.createContext<string>(null as unknown as string);
 export const CurrentTrack = React.createContext<AudioType>(null as unknown as AudioType);
 
 function App() {
@@ -40,11 +40,19 @@ function App() {
         'Authorization': 'Basic ' + btoa(client_id + ':' + client_secret)
       },
       body: 'grant_type=client_credentials'
-    }).then((res) => res.json()).then((data) => {
+    }).then((res) => {
+      if (!res.ok) {
+        return Promise.reject(res.status);
+      }
+      else {
+        return res.json()
+      }
+    }).then((data) => {
       setToken(data.access_token);
     })
 
   }, [client_id, client_secret])
+  
 
   return (
     <>

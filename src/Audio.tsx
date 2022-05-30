@@ -9,16 +9,19 @@ const MyAudio = () => {
     useEffect(()=>{
         if(src!==null){
             if(playing){
-                audio.onloadeddata=()=>{
+                audio.addEventListener('loadeddata',()=>{
                     audio.play();
-                }
+                })
             }
             else{
-                audio.onloadeddata= ()=>{
+                audio.addEventListener('loadeddata',()=>{
                     audio.pause();
-                }
+                })
             }
         }
+        return(audio.removeEventListener('loadeddata',()=>{
+            audio.play();
+        }))
     },[playing])
     
     if(src===null){
@@ -27,7 +30,7 @@ const MyAudio = () => {
         )
     }
     else{
-        {audio.src=src.preview_url}
+        audio.src=src.preview_url
         return (
             <div className="audio__visible display__flex">
                 <button className="buttonClear play-btn" onClick={()=>{if(!playing){setPlaying(true)}else{setPlaying(false)}}}>{playing && "❚❚"}{!playing && "►"}</button>

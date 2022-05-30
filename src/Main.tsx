@@ -13,11 +13,7 @@ const Main = () => {
 
   let data = useFetch('https://api.spotify.com/v1/albums?ids=6aSk2vxoY3xtz7cXKuY9EL,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc',token)
   
-  function so(track:MyType,audio:React.RefObject<HTMLDivElement>, er:React.RefObject<HTMLDivElement>){
-
-  }
-
-  if(data===null || data.error){
+  if(data===null){
     return(<div></div>)
   }
   else{

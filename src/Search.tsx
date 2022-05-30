@@ -16,7 +16,7 @@ const Search = () => {
     const data = useFetch('https://api.spotify.com/v1/search?q=track:+' + item + '++&type=track',token);
 
     const res = () => {
-        if (item === "" || data===null || data.error) {
+        if (item === "" || data===null) {
             return (
                 <div className="hidden search_container">
                 </div>

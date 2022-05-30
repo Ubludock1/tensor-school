@@ -9,7 +9,7 @@ const Categories = () => {
 
   let data = useFetch('https://api.spotify.com/v1/browse/categories',token)
 
-  if(data===null || data.error){
+  if(data===null){
     return(<div></div>)
   }
   else{
