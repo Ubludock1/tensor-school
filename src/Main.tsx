@@ -19,8 +19,8 @@ const Main = () => {
   else{
     return (
       <div className="main__content">
-        {data.albums.map((item) =>
-          <div className='main__playlist'>
+        {data.albums?.map((item) =>
+          <div key={item.id} className='main__playlist'>
             <a className='main__playlist-link'>
               <h2 className='main__head'>{item.name}
               </h2>

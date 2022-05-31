@@ -1,4 +1,5 @@
 import TypeTrack from "./TypeTrack";
+import PlayType from "./PlayType";
 interface MyType {
     albums:MyType[];
     categories:{items:MyType[]}
@@ -10,7 +11,7 @@ interface MyType {
         images:{url:string}[];
     };
     added_at:string;
-    track: MyType;
+    track?: MyType;
     images:{url:string}[];
     icons:{url:string}[];
     tracks:{items:MyType[]};
@@ -20,6 +21,7 @@ interface MyType {
     duration_ms: number; 
     img:string;
     data:string;
+    playlists:{items:PlayType[]};
 }
 
 export default MyType;

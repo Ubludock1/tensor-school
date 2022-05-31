@@ -33,12 +33,12 @@ const MainTrack = (props:{play:MyType[],img:string,name:string,data:string}) =>{
                                 if(item.track===undefined){
                                     if(item.preview_url!==null)
                                     {setSrc(item)}
-                                    else{console.log(1);navigate("/eroor:"+"track")}
+                                    else{navigate("/eroor:"+"track")}
                                 }
                                 else{
                                     if(item.track.preview_url!==null)
                                     {setSrc(item.track)}
-                                    else{console.log(1);navigate("/eroor:"+"track")}
+                                    else{navigate("/eroor:"+"track")}
                                 }
                             }}>
                                 <td className='table-item table-number'>

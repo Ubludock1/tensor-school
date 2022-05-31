@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Main from './Main';
 import Categories from './Categories';
 import Play from './Play';
@@ -17,10 +17,10 @@ import MyType from './Type';
 import AudioType from './AudioType';
 
 export const TheContext = React.createContext<string>("");
-export const CurrentTrack = React.createContext<AudioType>(null as unknown as AudioType);
+export const CurrentTrack = React.createContext<AudioType>({} as AudioType );
 
 function App() {
-  const [src, setSrc] = useState<MyType>(null as unknown as MyType);
+  const [src, setSrc] = useState<MyType>({} as MyType );
   const value = useMemo(() => ({ src, setSrc }), [src]);
 
 
@@ -48,7 +48,9 @@ function App() {
       }
     }).then((data) => {
       setToken(data.access_token);
-    })
+    }).catch(function (error) {
+      console.log(error);
+  }) 
 
   }, [client_id, client_secret])
   

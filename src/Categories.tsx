@@ -18,7 +18,7 @@ const Categories = () => {
         <div className="main_playlist">
           <h2 className="main__head">Все остальное</h2>
           <ul className='main__content-list'>
-            {data.categories.items.map((item) =>
+            {data.categories?.items.map((item) =>
               <li key={item.id.toString()} className='main__content-item-more' style={{ backgroundImage: 'url(' + item.icons[0].url + ')' }}>
                 <Link className='main__content-item-more-link' to={{ pathname: "/a:" + item.id }}>
                   <h3 className='main__content-head'>{item.name}</h3>

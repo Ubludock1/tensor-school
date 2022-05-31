@@ -3,7 +3,7 @@ import MyType from "./Type";
 import { useNavigate } from "react-router-dom";
 
 function useFetch(query:string,token:string){
-    const [data,setData] = useState<MyType>(null as unknown as MyType);
+    const [data,setData] = useState<MyType>({} as MyType);
     const navigate = useNavigate();
 
     useEffect(()=>{

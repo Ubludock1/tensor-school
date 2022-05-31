@@ -11,7 +11,7 @@ const Album = () => {
     let { tracks } = useParams<{ tracks: string }>();
     let data = useFetch("https://api.spotify.com/v1/albums/" + tracks?.slice(1),token);
 
-    if(data===null){
+    if(data===null || data.images===undefined){
         return(<div></div>)
     }
     else{
